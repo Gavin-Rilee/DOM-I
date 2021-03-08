@@ -40,3 +40,72 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//* Nav styling 
+let nav = document.getElementsByTagName("a");
+console.log(nav);
+nav[0].textContent = siteContent["nav"]["nav-item-1"];
+nav[1].textContent = siteContent["nav"]["nav-item-2"];
+nav[2].textContent = siteContent["nav"]["nav-item-3"];
+nav[3].textContent = siteContent["nav"]["nav-item-4"];
+nav[4].textContent = siteContent["nav"]["nav-item-5"];
+nav[5].textContent = siteContent["nav"]["nav-item-6"];
+
+for(let i = 0; i < nav.length; i++){
+  nav[i].style.color = "green";
+}
+
+//* Middle Section
+
+let firstSection = document.querySelector("h1");
+firstSection.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
+console.log(firstSection);
+
+let secondSection = document.querySelector("button");
+secondSection.innerText = siteContent["cta"]["button"];
+
+let img1 = document.getElementById("cta-img");
+img1.setAttribute('src',siteContent["cta"]["img-src"]);
+
+let img2 = document.getElementById("middle-img");
+img2.setAttribute('src',siteContent["main-content"]["middle-img-src"]);
+
+//* Main Content
+let mainHeaders = document.querySelectorAll("h4");
+let pTags = document.querySelectorAll("p");
+mainHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+pTags[0].textContent = siteContent["main-content"]["features-content"];
+
+mainHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+pTags[1].textContent = siteContent["main-content"]["about-content"];
+
+mainHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+pTags[2].textContent = siteContent["main-content"]["services-content"];
+
+mainHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+pTags[3].textContent = siteContent["main-content"]["product-content"];
+
+mainHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+pTags[4].textContent = siteContent["main-content"]["vision-content"];
+
+//* Contact
+
+mainHeaders[5].textContent = siteContent["contact"]["contact-h4"];
+pTags[5].textContent = siteContent["contact"]["address"];
+pTags[6].textContent = siteContent["contact"]["phone"];
+pTags[7].textContent = siteContent["contact"]["email"];
+
+//* Footer
+pTags[8].textContent = siteContent["footer"]["copyright"];
+
+//* NEW 
+let navs = document.querySelector("nav");
+let newTag = document.createElement("a");
+newTag.textContent = "More";
+navs.appendChild(newTag);
+newTag.style.color="purple";
+
+let somethingNew = document.createElement("a");
+somethingNew.textContent = "Weebs only!!!";
+navs.prepend(somethingNew);
+somethingNew.style.color = "pink";
